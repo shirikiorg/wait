@@ -2,7 +2,6 @@ package wait
 
 import (
 	"context"
-	"fmt"
 	"sync"
 )
 
@@ -23,7 +22,6 @@ func (w *Group) WaitWithContext(ctx context.Context) error {
 	case <-done:
 		return nil
 	case <-ctx.Done():
-		fmt.Println("test")
 		return ctx.Err()
 	}
 }
